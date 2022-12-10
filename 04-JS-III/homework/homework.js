@@ -58,7 +58,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  let a="";
+  /*let a="";
   for(i=0;i<palabras.length;i++){
     if(i===palabras.length-1){
       a=a+palabras[i];
@@ -67,7 +67,8 @@ function dePalabrasAFrase(palabras) {
     a=a+palabras[i]+" ";
     }
   }
-  return a;
+  return a;*/
+  return palabras.join(" ");
 }
 
 
@@ -75,16 +76,12 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  let a=0;
   for(i=0;i<array.length;i++){
-    if(array[i]===elemento){
-      a++;
-    }
-    else{
-      a+=0;
-    }
+    if(array[i]===elemento) return true;
+    else a=false;
   }
-  return (a>0?true:false);
+  return false;
+
 }
 
 
@@ -104,11 +101,12 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  let sum=0;
+  /*let sum=0;
   for(i=0;i<resultadosTest.length;i++){
     sum=sum+resultadosTest[i];
   }
-  return sum/resultadosTest.length;
+  return sum/resultadosTest.length;*/
+  return agregarNumeros(resultadosTest) / resultadosTest.length;
 }
 
 
@@ -197,8 +195,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  for(i=1;n/Math.pow(10,i)>=1;i++);
-  return (Math.trunc(n/Math.pow(10,i-1))===9?true:false);
+  /*for(i=1;n/Math.pow(10,i)>=1;i++);
+  return (Math.trunc(n/Math.pow(10,i-1))===9?true:false);*/
+  var str="";
+  str=n.toString();
+  if(str[0]==="9") return true;
+  return false;
 }
 
 
